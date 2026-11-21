@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Quiz App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+  <div class="wrapper">
+    <header class="top-bar">
+      <div class="secili-konu" id="secili-konu" hidden>
+        <span class="konu-rozet" id="konu-rozet"></span>
+        <span class="konu-ad" id="konu-ad"></span>
+      </div>
+
+      <div class="tema-alani">
+        <span>Light</span>
+        <label class="anahtar">
+          <input type="checkbox" id="tema-sec">
+          <span class="kaydirak"></span>
+        </label>
+        <span>Dark</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="giris-ekrani" id="giris-ekrani">
+        <div class="sol-yazi">
+          <h1>Welcome to the <span>Frontend Quiz!</span></h1>
+          <p>Pick a subject to get started.</p>
+        </div>
+
+        <div class="konu-butonlari">
+          <button type="button" class="kart-btn konu-btn" data-konu="HTML">
+            <span class="kutu html-renk">&lt;/&gt;</span>
+            <span>HTML</span>
+          </button>
+
+          <button type="button" class="kart-btn konu-btn" data-konu="CSS">
+            <span class="kutu css-renk">#</span>
+            <span>CSS</span>
+          </button>
+
+          <button type="button" class="kart-btn konu-btn" data-konu="JavaScript">
+            <span class="kutu js-renk">JS</span>
+            <span>JavaScript</span>
+          </button>
+
+          <button type="button" class="kart-btn konu-btn" data-konu="Accessibility">
+            <span class="kutu a11y-renk">A11y</span>
+            <span>Accessibility</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="soru-ekrani" id="soru-ekrani" hidden>
+        <div class="soru-sol">
+          <p class="soru-sira" id="soru-sira"></p>
+          <h2 class="soru-metni" id="soru-metni"></h2>
+          <div class="ilerleme-cubugu">
+            <div class="ilerleme-dolgu" id="ilerleme-dolgu"></div>
+          </div>
+        </div>
+
+        <div class="soru-sag">
+          <div class="siklar" id="siklar"></div>
+          <button type="button" class="mor-btn" id="gonder-btn">Submit Answer</button>
+          <p class="uyari" id="uyari"></p>
+        </div>
+      </section>
+
+      <section class="sonuc-ekrani" id="sonuc-ekrani" hidden>
+        <div class="sonuc-sol">
+          <h1>Quiz completed <span>You scored...</span></h1>
+        </div>
+
+        <div class="sonuc-sag">
+          <div class="puan-kutusu">
+            <div class="puan-konu">
+              <span class="konu-rozet" id="sonuc-rozet"></span>
+              <span class="konu-ad" id="sonuc-ad"></span>
+            </div>
+            <p class="puan-sayi" id="puan-sayi">0</p>
+            <p class="puan-toplam" id="puan-toplam">out of 3</p>
+          </div>
+          <button type="button" class="mor-btn" id="tekrar-btn">Play Again</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
